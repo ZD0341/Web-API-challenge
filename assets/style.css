@@ -43,3 +43,27 @@ ul {
     align-items: baseline;
     padding-left: 50px;
 }
+
+li {
+    margin-bottom: 10px;
+}
+.question_page,
+.submit_page,
+.highscore_page,
+#check_line {
+    display: none;
+}
+
+.button {
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+
+    background-color: rgb(205, 245, 247);
+
+}

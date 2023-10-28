@@ -1,14 +1,9 @@
-// GIVEN I am taking a code quiz
-// WHEN I click the start button
-// THEN a timer starts and I am presented with a question
-// WHEN I answer a question
-// THEN I am presented with another question
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and score
+var welcome = document.querySelector("#introduction");
+var startBtn = document.querySelector("#start_button");
+var introPage =document.querySelector("#intro_page");
+
+var questionPage = document.querySelector("#question_page");
+
 var questionSource = [
     {
         question: "Questions 1 : What does HTML stand for?",
@@ -45,14 +40,53 @@ var questionSource = [
     },
 ];
 
+var questionNumber = 0;
+
+
 /*Functions*/
 //WHEN I click the start button, THEN a timer starts(The setInterval() Method)
-function countdown() { }
+function countdown() { 
+    var timerInterval = setInterval(function () {
+
+        secondsLeft--;
+        timeLeft.textContent = "Time left: " + secondsLeft + " s";
+  
+          if (secondsLeft <= 0){
+              clearInterval(timerInterval);
+              timeLeft.textContent = "Time is up!"; 
+              finish.textContent = "Time is up!";
+              gameOver();
+
+          } else  if(questionCount >= questionSource.length +1) {
+              clearInterval(timerInterval);
+              gameOver();
+              } 
+  }, 1000);
+}
 
 //Click the button to start the quiz
-function startQuiz() { }
+function startQuiz() {
+    introPage.style.display = "none";
+    questionPage.style.display = "block";
+    questionNumber = 0
+    countdown();
+        
+    showQuestion(questionNumber);
+}
 //present the questions and answers
-function showQuestion() { }
+function showQuestion() {
+    const question = questionSource[currentQuestion];
+    questionTitle.textContent = question.question;
+    choicesContainer.innerHTML = "";
+
+    question.choices.forEach((choice, index) => {
+        const choiceButton = document.createElement("button");
+        choiceButton.textContent = choice;
+        choiceButton.setAttribute("data-index", index);
+        choiceButton.addEventListener("click", checkAnswer);
+        choicesContainer.appendChild(choiceButton);
+    });
+}
 
 //WHEN I answer a question,Show if answer is correct or wrong 
 function checkAnswer() { }
