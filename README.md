@@ -1,7 +1,7 @@
-# Web-API-challenge
+# Code Quiz
   
   ## Description
-  This is an e-commerce application developed using Node.js, Express, and Sequelize. The application allows users to manage products, categories, and tags, enabling an end-to-end e-commerce experience.
+  This is a simple coding quiz web application designed to test your knowledge on various programming topics. The quiz provides multiple-choice questions and a countdown timer for each question.
   
   ## Table of Contents
   - [Installation](#installation)
@@ -12,16 +12,16 @@
   - [Questions](#questions)
   
   ## Installation
-  1. Clone this repository.
-  2. Install dependencies using `npm install`.
-  3. Configure your database connection by creating a `.env` file with your environment variables, like `DB_NAME`, `DB_USER`, `DB_PW`, and `DB_HOST`.
-  4. Run the database schema and seed data using `npm run seed`.
-  5. Start the server with `npm start`
+   To install and run the Coding Quiz locally on your machine, Clone this repository to your local machine.
   
   ## Usage
-  - Access the API routes for managing categories, products, and tags.
-  - Use tools like Postman or cURL to make API requests.
-  - Refer to the API documentation for detailed endpoints.
+  - To use the Coding Quiz:
+  Click the "Start Quiz" button to begin.
+  A timer will start, and you'll be presented with a series of questions.
+  Choose the correct answer from the multiple-choice options.
+  If the answer is correct, your score will increase; otherwise, time will be deducted.
+  Continue answering questions until the quiz is completed or the timer runs out.
+  Once the quiz is over, you can save your initials and view your final score.
   
   ## License
   This project is licensed under the License1 License.
